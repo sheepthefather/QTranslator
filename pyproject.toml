@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qtranslator"
+version = "0.1.0"
+description = "跨平台截图翻译工具：截图 → OCR → 翻译 → 覆盖回原图"
+requires-python = ">=3.10"
+dependencies = [
+    "PySide6>=6.6",
+    "mss>=9.0",
+    "rapidocr-onnxruntime>=1.3",
+    "onnxruntime>=1.17",
+    "Pillow>=10.0",
+    "numpy>=1.24",
+    "pynput>=1.7",
+    "opencv-python>=4.8",
+]
+
+[project.scripts]
+qtranslator = "qtranslator.app:run"
+
+[tool.setuptools.packages.find]
+where = ["src"]
